@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-text {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        .sidebar {
+            margin-top: 20px;
+        }
+
+        .navigation {
+            text-align: right;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Centering the ordered list */
+        .main-content ol {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="main-content">
+        <h3 class="title">Achievements</h3>
+
+        <div class="main-content">
+            <h4 class="left-text">Stats</h4>
+            <ul>
+                <li class="left-text">24 WINS</li>
+                <li class="left-text">3 LOSSES</li>
+                <li class="left-text">0 TIES</li>
+                <li class="left-text">WPCT: 89%</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h4 class="left-text">Spring, 2023</h4>
+            <ul>
+                <li class="left-text">Men's 5v5 Basketball- S2</li>
+                <li class="left-text">Scrubs</li>
+                <li class="left-text">6-1-0</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h4 class="left-text">Fall, 2023</h4>
+            <ul>
+                <li class="left-text">Men's 3v3 Basketball- S1</li>
+                <li class="left-text">Scuse™️</li>
+                <li class="left-text">7-0-0</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h4 class="left-text">Spring, 2024</h4>
+            <ul>
+                <li class="left-text">Men's 5v5 Basketball- S1</li>
+                <li class="left-text">Splash</li>
+                <li class="left-text">7-2-0</li>
+            </ul>
+        </div>
+        
+        <!-- Unordered list -->
+        <div class="main-content">
+            <h4 class="left-text">Unordered List</h4>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+        </div>
+
+        <!-- Ordered list - Centered -->
+        <div class="main-content">
+            <h4 class="left-text">Ordered List</h4>
+            <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <h4 class="navigation">Navigation</h4>
+        <ul>
+            <li class="navigation"><a href="index.html">Home</a></li>
+            <li class="navigation"><a href="roster.html">Roster</a></li>
+            <li class="navigation"><a href="record.html">Record</a></li>
+            <li class="navigation"><a href="achievements.html">Achievements</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

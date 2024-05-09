@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roster</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS styles for the layout */
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-content {
+            width: 70%;
+        }
+
+        .sidebar {
+            width: 25%;
+            margin-top: 20px;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #000000;
+            color: #fff;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #000000;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main Content and Sidebar -->
+<div class="container">
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Title -->
+        <h3 class="title">Roster<br></h3>
+
+        <!-- Team Roster & Stats Table -->
+        <table id="player-stats">
+            <br><caption>Player Stats</caption>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>GP</th>
+                    <th>MVP</th>
+                    <th>PTS</th>
+                    <th>REB</th>
+                    <th>STL</th>
+                    <th>BLK</th>
+                    <th>TO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Player roster generation script -->
+            </tbody>
+        </table>
+
+        <!-- Link to navigate to Team Roster -->
+        <a href="#team-roster">Go to Team Roster</a>
+
+    </div>
+
+    <!-- Player List -->
+    <div class="sidebar">
+        <!-- Navigation Links -->
+        <h4 class="center-text">Navigation</h4>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="roster.html">Roster</a></li>
+            <li><a href="record.html">Record</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+        </ul>
+        
+        <!-- Additional Player Roster (JS Script): Click any name for individualized player stats -->
+        <h4 class="center-text">Team Roster</h4>
+        <div id="player-list">
+            <a href="#">Gabe I</a>
+            <a href="#">Richard Cedeño</a>
+            <a href="#">Jason Yang</a>
+            <a href="#">Jeffrey Oparah</a>
+            <a href="#">Fabrizio De</a>
+            <a href="#">Sterling Pagan</a>
+            <a href="#">Cameron Cutter</a>
+            <a href="#">Myles Nicolas</a>
+            <a href="#">Zaire Duncan</a>
+            <a href="#">Markel Thompson</a>
+            <a href="#">Samuel Ginzburg</a>
+            <a href="#">Stephen Pierre-Paul</a>
+        </div>
+    </div>
+    <!-- HTML for user input -->
+<div>
+    <input type="text" id="player-name-input" placeholder="Enter player name">
+    <button id="submit-button">Submit</button>
+</div>
+
+</div>
+
+<!-- JavaScript for generating player roster and handling player stats display -->
+<script>
+    // Function to display player stats when clicked
+    function displayPlayerStats(playerName) {
+        // Get the player stats table
+        var playerStatsTable = document.getElementById('player-stats');
+
+        // Loop through each row in the table
+        for (var i = 1; i < playerStatsTable.rows.length; i++) {
+            var row = playerStatsTable.rows[i];
+
+            // Check if the player name matches
+            if (row.cells[0].innerText === playerName) {
+                // Display the player stats row
+                row.style.display = 'table-row';
+            } else {
+                // Hide other player stats rows
+                row.style.display = 'none';
+            }
+        }
+    }
+
+    // Function to calculate and display team win percentage
+    function calculateWinPercentage(wins, losses) {
+        var totalGames = wins + losses;
+        var winPercentage = (wins / totalGames) * 100;
+
+        // Display the win percentage on the page
+        var winPercentageElement = document.getElementById('win-percentage');
+        winPercentageElement.textContent = 'Win Percentage: ' + winPercentage.toFixed(2) + '%';
+    }
+
+    // Event listener to call displayPlayerStats function when a player is clicked
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all player links
+        var playerLinks = document.querySelectorAll('#player-list a');
+
+        // Add click event listener to each player link
+        playerLinks.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                var playerName = link.textContent; // Get player name from link
+                displayPlayerStats(playerName); // Call displayPlayerStats function with player name
+            });
+        });
+
+        // Event listener for user input to call displayPlayerStats function
+        var inputField = document.getElementById('player-name-input');
+        var submitButton = document.getElementById('submit-button');
+
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+            var playerName = inputField.value.trim(); // Get player name from input field
+            if (playerName !== '') {
+                displayPlayerStats(playerName); // Call displayPlayerStats function with player name
+            }
+        });
+    });
+
+    // Generate player roster
+    var players = ['Gabe I', 'Richard Cedeño', 'Jason Yang', 'Jeffrey Oparah', 'Fabrizio De', 'Sterling Pagan', 'Cameron Cutter', 'Myles Nicolas', 'Zaire Duncan', 'Markel Thompson', 'Samuel Ginzburg', 'Stephen Pierre-Paul'];
+    
+    players.forEach(function(player) {
+        var row = "<tr>";
+        row += "<td>" + player + "</td>";
+        row += "<td>0</td>"; // GP
+        row += "<td>0</td>"; // MVP
+        row += "<td>0</td>"; // PTS
+        row += "<td>0</td>"; // REB
+        row += "<td>0</td>"; // STL
+        row += "<td>0</td>"; // BLK
+        row += "<td>0</td>"; // TO
+        row += "</tr>";
+        document.querySelector("#player-stats tbody").innerHTML += row;
+    });
+</script>

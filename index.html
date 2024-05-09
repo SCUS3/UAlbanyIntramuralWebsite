@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-text {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        .sidebar {
+            margin-top: 20px;
+        }
+
+        .navigation {
+            text-align: right;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="main-content">
+        <h3 class="title">Team Scuse Homepage</h3>
+        <p class="left-text">Alt Text.</p>
+        <!-- YouTube Video Embed -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/gHvLLpYTaow" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="sidebar">
+        <h4 class="navigation">Navigation</h4>
+        <ul>
+            <li class="navigation"><a href="index.html">Home</a></li>
+            <li class="navigation"><a href="roster.html">Roster</a></li>
+            <li class="navigation"><a href="record.html">Record</a></li>
+            <li class="navigation"><a href="achievements.html">Achievements</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* CSS styles for all HTML pages */
+
+/* Global Styles */
+body {
+    background-color: #1F2833;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #C5C6C7;
+}
+
+/* Page Title Styles */
+h3 {
+    margin: 0;
+    color: #66FCF1;
+}
+
+/* Main Container Styles */
+.container {
+    background-color: #0B0C10;
+    padding: 10px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Adjusted */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    margin-top: 20px; /* Adjusted */
+    text-align: left;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-bottom: 20px; /* Adjusted */
+}
+
+/* Section Title Styles */
+h4 {
+    margin: 10px 0;   
+    text-align: center; /* Adjusted */
+    color: #66FCF1;
+}
+
+/* Subtitle Styles */
+h5 {
+    margin: 0;
+    color: #66FCF1;
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Link Styles */
+a {
+    color: #C5C6C7;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Email Link Styles */
+.email-link {
+    padding: 10px;
+    text-align: center;
+}
+
+a.email {
+    color: #66FCF1;
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 575px) {
+    .container {
+        padding: 20px;
+    }
+}

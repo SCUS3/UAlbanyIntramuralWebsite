@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items at the top */
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .main-content {
+            width: 70%;
+        }
+
+        .sidebar {
+            width: 25%;
+            margin-top: 20px;
+        }
+
+        .sidebar ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sidebar li a:hover {
+            color: #0000ff; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3 class="title">Record</h3>
+
+    <div class="main-content">
+        <h4 class="center-text">Game Record: 5-0-0</h4>
+        <h4 id="win-percentage"></h4>
+        <div class="game">
+            <p class="center-text">Mar 25 - Scuse™ VS UAK</p>
+            <p class="center-text">W 50 - 46</p>
+        </div>
+        <div class="game">
+            <p class="center-text">Apr 02 - Scuse™ VS State Killas</p>
+            <p class="center-text">W 75 - 51</p>
+        </div>
+        <div class="game">
+            <p class="center-text">Apr 11 - Scuse™ VS TheRevengeTour</p>
+            <p class="center-text">W 55 - 52</p>
+        </div>
+        <div class="game">
+            <p class="center-text">Apr 23 - Scuse™ VS CBS</p>
+            <p class="center-text">W 70 - 50</p>
+        </div>
+        <div class="game">
+            <p class="center-text">Apr 25 - Scuse™ VS TheRevengeTour</p>
+            <p class="center-text">W 58 - 38</p>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <h4>Navigation</h4>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="roster.html">Roster</a></li>
+            <li><a href="record.html">Record</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Call calculateWinPercentage function with appropriate win and loss values
+    document.addEventListener('DOMContentLoaded', function() {
+        // Assuming you have the win and loss counts, replace these values accordingly
+        var wins = 5;
+        var losses = 0;
+        
+        calculateWinPercentage(wins, losses);
+    });
+</script>
+
+</body>
+</html>
